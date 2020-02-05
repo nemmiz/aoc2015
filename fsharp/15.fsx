@@ -45,25 +45,5 @@ let findBestCookie ingredients scoreFun =
                } |> Seq.max
     loop (List.length ingredients) 100 []
 
-// TODO: pass score calculation as a function
-
-// let part2 ingredients scoreFun =
-//     let rec loop n remaining amounts =
-//         match n with
-//         | 1 -> scoreFun ingredients (remaining :: amounts)
-//         //| 1 -> let amts = (remaining :: amounts)
-//         //       if (calories ingredients amts) = 500 then
-//         //           score ingredients amts
-//         //       else 0
-//         | _ -> seq {
-//                    for i in 0 .. remaining do
-//                        yield loop (n - 1) (remaining - i) (i :: amounts)
-//                } |> Seq.max
-//     loop (List.length ingredients) 100 [] |> printfn "%d"
-
 printfn "%d" (findBestCookie ingredients score)
 printfn "%d" (findBestCookie ingredients scoreOnly500cal)
-
-//calories ingredients [10; 20; 30; 40]
-
-//score ingredients [44; 56]
